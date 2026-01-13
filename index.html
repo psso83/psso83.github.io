@@ -34,7 +34,7 @@
 
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top navbar-toggler-iconㄴ">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -42,34 +42,35 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#myPage">Logo</a>
+            <a class="navbar-brand" href="#myPage">빡쏘라고해</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="#services">SERVICES</a></li>
-                <li><a href="#portfolio">PORTFOLIO</a></li>
-                <li><a href="#pricing">PRICING</a></li>
-                <li><a href="#contact">CONTACT</a></li>
+                <li><a href="#about">ABOUT ME...</a></li>
+                <li><a href="#lifefor">인생모토</a></li>
+                <li><a href="#goal">목표들</a></li>
+                <li><a href="#favorite">최애의 무언가(들)</a></li>
+                <li><a href="#watch">구경하세여</a></li>
+                <li><a href="#contact">연락하세여</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
 <div class="jumbotron text-center">
-    <h1>박소은</h1>
+    <h1>어서오세요 ヾ(≧▽≦*)o</h1>
     <p class="italic-text">PPAK's SSOXO days...</p>
     <form>
         <div class="input-group">
-            <input type="email" class="form-control" size="50" placeholder="Email Address" required>
+            <input type="email" class="form-control" size="50" placeholder="오늘의 한마디" required>
             <div class="input-group-btn">
-                <button type="button" class="btn btn-danger">Subscribe</button>
+                <button type="button" class="btn btn-danger">SEND!</button>
             </div>
         </div>
     </form>
 </div>
 
-<!-- Container (About Section) -->
+<!-- Container (About me... Section) -->
 <div id="about" class="container-fluid">
     <div class="row">
         <div class="col-sm-8">
@@ -81,31 +82,32 @@
                 전공은 조금 안맞는 거 같지만 나름 열심히 하려고 시도는 하는 중 입니다. 
                 한번 뿐일 대학교 재밌게 살아보려고 정말 재밌는 짓거리는 혼자 다 하고 다니는 중이에요. 
                 원래 남는건 추억뿐!! 그러니까 우리 모두 재밌게 살아봐여~</p>
-            <br><button class="btn btn-default btn-lg">☆*: .｡. o(❁´◡`❁)o .｡.:*☆</button>
+            <br><button class="btn btn-default btn-lg" onclick="window.open('//www.youtube.com/watch?v=_kWjTjnlgvs&list=RD_kWjTjnlgvs&start_radio=1')">☆*: .｡. o(❁´◡`❁)o .｡.:*☆</button>
         </div>
-        <div class="col-sm-4">
-            <span class="glyphicon glyphicon-signal logo"></span>
+        <img src="assets/images/KakaoTalk_20260114_001439.jpg" alt="박소은이올시다">
+    </div>
+</div>
+
+<!-- Container (인생모토 Section) -->
+<div id="lifefor" class="container-fluid">
+    <div class="container-fluid bg-grey">
+        <div class="row">
+            <div class="col-sm-4">
+                <span class="glyphicon glyphicon-globe logo slideanim"></span>
+            </div>
+            <div class="col-sm-8">
+                <h4><strong>인생모토:</strong> 나이에 맞게, 곱게 늙기 </h4><br>
+                <p><strong>계기:</strong>이유는 단순합니다. 나이에 맞게 사는게 좋은거에요.
+                물론 새로운 시도, 꿈을 찾아 떠나는 여정 이런거는 나이가 없다고 생각해요. 그런 도전은 나이가 70이어도 나이에 맞는거에요. 
+                제가 싫어하는 건, 쉽게 말하자면 영포티 감성 뭐 그런느낌? 어쨋든 나이에 맞게 살거에요. 곱게 늙을 거고요. 
+                곱게 늙어서 인자한 할머니가 되고싶어요. 그렇게 유유자적 살다가 평안히 눈을 감는게 좋을거 같아요.</p>
+            </div>
         </div>
     </div>
 </div>
 
-<div class="container-fluid bg-grey">
-    <div class="row">
-        <div class="col-sm-4">
-            <span class="glyphicon glyphicon-globe logo slideanim"></span>
-        </div>
-        <div class="col-sm-8">
-            <h4><strong>인생모토:</strong> 나이에 맞게, 곱게 늙기 </h4><br>
-            <p><strong>계기:</strong>이유는 단순합니다. 나이에 맞게 사는게 좋은거에요.
-            물론 새로운 시도, 꿈을 찾아 떠나는 여정 이런거는 나이가 없다고 생각해요. 그런 도전은 나이가 70이어도 나이에 맞는거에요. 
-            제가 싫어하는 건, 쉽게 말하자면 영포티 감성 뭐 그런느낌? 어쨋든 나이에 맞게 살거에요. 곱게 늙을 거고요. 
-            곱게 늙어서 인자한 할머니가 되고싶어요. 그렇게 유유자적 살다가 평안히 눈을 감는게 좋을거 같아요.</p>
-        </div>
-    </div>
-</div>
-
-<!-- Container (Services Section) -->
-<div id="services" class="container-fluid text-center">
+<!-- Container (목표들 Section) -->
+<div id="goal" class="container-fluid text-center">
     <h2>올해의 목표</h2>
     <h4>부제 : 2026년에는 갓생살기</h4>
     <br>
@@ -135,37 +137,67 @@
             <p>제 취미중에는 공연보기, 야구보기가 있는데, 작년에는 직접 본 횟수가 너무 적었습니다. 올해는 작년보다 더 많이 보러다니고 싶습니다. </p>
         </div>
     </div>
+    <h2>평생의 목표</h2>
+    <h4>부제 : 버킷리스트</h4>
+    <br>
+    <div class="row slideanim">
+        <div class="col-sm-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#007087" class="bi bi-airplane" viewBox="0 0 16 16">
+                <path d="M6.428 1.151C6.708.591 7.213 0 8 0s1.292.592 1.572 1.151C9.861 1.73 10 2.431 10 3v3.691l5.17 2.585a1.5 1.5 0 0 1 .83 1.342V12a.5.5 0 0 1-.582.493l-5.507-.918-.375 2.253 1.318 1.318A.5.5 0 0 1 10.5 16h-5a.5.5 0 0 1-.354-.854l1.319-1.318-.376-2.253-5.507.918A.5.5 0 0 1 0 12v-1.382a1.5 1.5 0 0 1 .83-1.342L6 6.691V3c0-.568.14-1.271.428-1.849m.894.448C7.111 2.02 7 2.569 7 3v4a.5.5 0 0 1-.276.447l-5.448 2.724a.5.5 0 0 0-.276.447v.792l5.418-.903a.5.5 0 0 1 .575.41l.5 3a.5.5 0 0 1-.14.437L6.708 15h2.586l-.647-.646a.5.5 0 0 1-.14-.436l.5-3a.5.5 0 0 1 .576-.411L15 11.41v-.792a.5.5 0 0 0-.276-.447L9.276 7.447A.5.5 0 0 1 9 7V3c0-.432-.11-.979-.322-1.401C8.458 1.159 8.213 1 8 1s-.458.158-.678.599"/>
+            </svg>
+            <h4>뉴질랜드 살기</h4>
+            <p>제가 뉴질랜드 갔을 때의 기억이 너무 좋았어서, 죽기 전에 한번쯤은 꼭 오래도록 살아보고 싶습니다. </p>
+        </div>
+        <div class="col-sm-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#007087" class="bi bi-book" viewBox="0 0 16 16">
+                <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/>
+            </svg>
+            <h4>책 써보기</h4>
+            <p>죽기전에 한번쯤은 저의 연애사를 녹이고, 친구들의 연애사를 녹여서 로맨스소설을 한번 써보고 싶습니다.</p>
+        </div>
+        <div class="col-sm-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="#007087" class="bi bi-youtube" viewBox="0 0 16 16">
+                <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
+            </svg>
+            <h4>유튜버되기</h4>
+            <p>고등학생 때 잠시 했던 기억이 있는데, 재밌었어서 언젠간 다시 시도해보고 싶습니다. </p>
+        </div>
+    </div>
 </div>
 
-<!-- Container (Portfolio Section) -->
-<div id="portfolio" class="container-fluid text-center bg-grey">
-    <h2>Portfolio</h2><br>
-    <h4>What we have created</h4>
+
+
+<!-- Container (최애의 무언가(들) Section) -->
+<div id="favorite" class="container-fluid text-center bg-grey">
+    <h2>최애의 무언가(들)</h2><br>
+    <h4>부제 : 복실이, 삼성라이온즈, 김도훈</h4>
     <div class="row text-center slideanim">
+        <div class="container-thumb">
         <div class="col-sm-4">
             <div class="thumbnail">
-                <img src="assets/images/paris.jpg" alt="Paris" width="400" height="300">
-                <p><strong>Paris</strong></p>
-                <p>Yes, we built Paris</p>
+                <img src="assets/images/KakaoTalk_20260113_223113356.jpg" alt="복실이" >
+                <p><strong>복실이</strong></p>
+                <p>네, 저희 집 강아지에요. 귀엽죠?</p>
             </div>
         </div>
         <div class="col-sm-4">
             <div class="thumbnail">
-                <img src="assets/images/newyork.jpg" alt="New York" width="400" height="300">
-                <p><strong>New York</strong></p>
-                <p>We built New York</p>
+                <img src="assets/images/aa.svg" alt="삼성 라이온즈" >
+                <p><strong>삼성 라이온즈</strong></p>
+                <p>푸른 피를 이어받은 저는 한마리의 사자입니다.</p>
             </div>
         </div>
         <div class="col-sm-4">
             <div class="thumbnail">
-                <img src="assets/images/sanfran.jpg" alt="San Francisco" width="400" height="300">
-                <p><strong>San Francisco</strong></p>
-                <p>Yes, San Fran is ours</p>
+                <img src="assets/images/6b6df8d43cc1f1dbecd376ac4cbc564f.jpg" alt="김도훈" >
+                <p><strong>김도훈</strong></p>
+                <p>제 이상형이에요. 이런 남성있으면 소개부탁드려요❤️</p>
             </div>
+        </div>
         </div>
     </div><br>
 
-    <h2>What our customers say</h2>
+    <h2>말씀 한 소절</h2>
     <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -177,13 +209,13 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <h4>"This company is the best. I am so happy with the result!"<br><span>Michael Roe, Vice President, Comment Box</span></h4>
+                <h4> "The lot is cast into the lap, but its every decision is from the LORD."<br><span>Proverbs 16:33</span></h4>
             </div>
             <div class="item">
-                <h4>"One word... WOW!!"<br><span>John Doe, Salesman, Rep Inc</span></h4>
+                <h4>"The Lord is my shepherd; I shall not want."<br><span>Psalm 26:1</span></h4>
             </div>
             <div class="item">
-                <h4>"Could I... BE any more happy with this company?"<br><span>Chandler Bing, Actor, FriendsAlot</span></h4>
+                <h4> "I can do all things through Christ who strengthens me"<br><span>Philippians 4:13</span></h4>
             </div>
         </div>
 
@@ -199,82 +231,70 @@
     </div>
 </div>
 
-<!-- Container (Pricing Section) -->
-<div id="pricing" class="container-fluid">
+<!-- Container (구경하세여 Section) -->
+<div id="watch" class="container-fluid">
     <div class="text-center">
-        <h2>Blog Link</h2>
-        <h4>Choose a payment plan that works for you</h4>
+        <h2>구경하세여</h2>
+        <h4>24시간 언제나 늘 환영합니다</h4>
     </div>
     <div class="row slideanim">
         <div class="col-sm-4 col-xs-12">
             <div class="panel panel-default text-center">
                 <div class="panel-heading">
-                    <h1>Basic</h1>
+                    <h1>INSTAGRAM</h1>
                 </div>
                 <div class="panel-body">
-                    <p><strong>20</strong> Lorem</p>
-                    <p><strong>15</strong> Ipsum</p>
-                    <p><strong>5</strong> Dolor</p>
-                    <p><strong>2</strong> Sit</p>
-                    <p><strong>Endless</strong> Amet</p>
+                    <p>Let's<strong> follow together</strong></p>
                 </div>
                 <div class="panel-footer">
-                    <h3>$19</h3>
-                    <h4>per month</h4>
-                    <button class="btn btn-lg">Sign Up</button>
+                    <h4>IG:</h4>
+                    <h3>p_sxo_3</h3>
+                    <button class="btn btn-lg" onclick="window.open('//www.instagram.com/p_sxo_3/')">구경하기</button>
                 </div>
             </div>
         </div>
         <div class="col-sm-4 col-xs-12">
             <div class="panel panel-default text-center">
                 <div class="panel-heading">
-                    <h1>Pro</h1>
+                    <h1>GITHUB</h1>
                 </div>
                 <div class="panel-body">
-                    <p><strong>50</strong> Lorem</p>
-                    <p><strong>25</strong> Ipsum</p>
-                    <p><strong>10</strong> Dolor</p>
-                    <p><strong>5</strong> Sit</p>
-                    <p><strong>Endless</strong> Amet</p>
+                    <p>Let's<strong> add together</strong></p>
                 </div>
                 <div class="panel-footer">
-                    <h3>$29</h3>
-                    <h4>per month</h4>
-                    <button class="btn btn-lg">Sign Up</button>
+                    <h4>ID:</h4>
+                    <h3>psso83</h3>
+                    <button class="btn btn-lg" onclick="window.open('//github.com/psso83')">구경하기</button>
                 </div>
             </div>
         </div>
         <div class="col-sm-4 col-xs-12">
             <div class="panel panel-default text-center">
                 <div class="panel-heading">
-                    <h1>Premium</h1>
+                    <h1>TISTORY</h1>
                 </div>
                 <div class="panel-body">
-                    <p><strong>100</strong> Lorem</p>
-                    <p><strong>50</strong> Ipsum</p>
-                    <p><strong>25</strong> Dolor</p>
-                    <p><strong>10</strong> Sit</p>
-                    <p><strong>Endless</strong> Amet</p>
+                    <p>Let's<strong> add together</strong></p>
                 </div>
                 <div class="panel-footer">
-                    <h3>$49</h3>
-                    <h4>per month</h4>
-                    <button class="btn btn-lg">Sign Up</button>
+                    <h4>NAME:</h4>
+                    <h3>빡쏘라고해</h3>
+                    <button class="btn btn-lg" onclick="window.open('s//pkse0803.tistory.com/')">구경하기</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Container (Contact Section) -->
+<!-- Container (구경하세여 Section) -->
 <div id="contact" class="container-fluid bg-grey">
     <h2 class="text-center">CONTACT</h2>
     <div class="row">
         <div class="col-sm-5">
-            <p>Contact us and we'll get back to you within 24 hours.</p>
-            <p><span class="glyphicon glyphicon-map-marker"></span> Chicago, US</p>
-            <p><span class="glyphicon glyphicon-phone"></span> +00 1515151515</p>
-            <p><span class="glyphicon glyphicon-envelope"></span> myemail@something.com</p>
+            <p>24시간 언제든지 늘 환영입니다.(잘 본다고는 확신 못하긴해~)</p>
+            <p><span class="glyphicon glyphicon-map-marker"></span> Jochiwon, SEJONG</p>
+            <p><span class="glyphicon glyphicon-phone"></span> +82 10.3541.5001</p>
+            <p><span class="glyphicon glyphicon-envelope"></span> ssoxo083@gmail.com</p>
         </div>
         <div class="col-sm-7 slideanim">
             <div class="row">
@@ -295,14 +315,11 @@
     </div>
 </div>
 
-<!-- Image of location/map -->
-<img src="/w3images/map.jpg" class="w3-image w3-greyscale-min" style="width:100%">
-
 <footer class="container-fluid text-center">
     <a href="#myPage" title="To Top">
         <span class="glyphicon glyphicon-chevron-up"></span>
     </a>
-    <p>Bootstrap Theme Made By <a href="https://www.w3schools.com" title="Visit w3schools">www.w3schools.com</a></p>
+    <p>오늘도 행복하길...<a href="https://www.youtube.com/watch?v=pcxJMIVfyEg&list=RDpcxJMIVfyEg&start_radio=1" title="낙화">그런 의미에서 노래한곡조...</a></p>
 </footer>
 
 
