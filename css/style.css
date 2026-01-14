@@ -38,6 +38,8 @@ input,
 }
 
 body {
+    margin : 0;
+    padding : 0;
     font: 400 15px Lato, sans-serif;
     line-height: 1.8;
     color: #818181;
@@ -59,7 +61,7 @@ h4 {
 .jumbotron {
     background-color: #007087;
     color: #ffd452;
-    padding: 100px 100px;
+    padding: 80px 100px;
     font-family: "Black Han Sans", sans-serif;
 }
 .container-fluid {
