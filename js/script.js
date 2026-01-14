@@ -32,3 +32,21 @@ $(document).ready(function () {
         });
     });
 })
+
+document.getElementById("msgForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const input = document.getElementById("content");
+  const text = input.value.trim();
+  if (!text) return;
+
+  await fetch("http://127.0.0.1:9091/save", {
+    method: "POST",
+    headers: {
+      "Content-Type": "text/plain; charset=utf-8"
+    },
+    body: text
+  });
+
+  input.value = "";
+});

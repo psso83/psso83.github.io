@@ -1,6 +1,45 @@
 <!DOCTYPE html>
 <html lang="kr">
 <head>
+<script>
+  // 끝에서만 부드럽게 감속 (처음은 빠릿)
+  function easeOutCubic(t) {
+    return 1 - Math.pow(1 - t, 3);
+  }
+
+  function smoothScrollTo(targetY, duration = 550) {
+    const startY = window.pageYOffset || document.documentElement.scrollTop;
+    const dist = targetY - startY;
+    const startT = performance.now();
+
+    function step(now) {
+      const t = Math.min(1, (now - startT) / duration);
+      const y = startY + dist * easeOutCubic(t);
+      window.scrollTo(0, y);
+      if (t < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  // navbar의 #링크 클릭을 가로채서 커스텀 스무스로 이동
+  document.querySelectorAll('.navbar a[href^="#"]').forEach(a => {
+    a.addEventListener("click", function (e) {
+      const id = this.getAttribute("href");
+      const el = document.querySelector(id);
+      if (!el) return;
+
+      e.preventDefault();
+
+      const nav = document.querySelector(".navbar");
+      const navH = nav ? nav.offsetHeight : 0;
+
+      const y = el.getBoundingClientRect().top + window.pageYOffset - navH;
+      smoothScrollTo(y, 350); // ✅ 더 빠르게: 350~450 / 더 스르륵: 600~750
+    });
+  });
+</script>
+
+
     <!-- Theme Made By www.w3schools.com -->
     <title>ppaksso</title>
     <meta charset="utf-8">
@@ -33,8 +72,54 @@
     <link rel="stylesheet" href="css/style.css">
 
 </head>
+
+<script>
+  // 공통 닫기 함수
+  function closeNavbar() {
+    $('.navbar-collapse').collapse('hide');
+  }
+
+  // 1️⃣ 메뉴 항목 클릭 시 닫기
+  $('.navbar-collapse a').on('click', function () {
+    closeNavbar();
+  });
+
+  // 2️⃣ 메뉴 바깥 클릭 시 닫기
+  $(document).on('click', function (e) {
+    const $menu = $('.navbar-collapse');
+    const $toggle = $('.navbar-toggle');
+
+    if (
+      $menu.hasClass('in') &&
+      !$menu.is(e.target) &&
+      $menu.has(e.target).length === 0 &&
+      !$toggle.is(e.target) &&
+      $toggle.has(e.target).length === 0
+    ) {
+      closeNavbar();
+    }
+  });
+
+  // 3️⃣ 스크롤하면 자동으로 닫기 🔥
+  let lastScrollY = window.scrollY;
+
+  $(window).on('scroll', function () {
+    const currentScrollY = window.scrollY;
+
+    // 조금이라도 스크롤되면 닫기 (미세 스크롤 방지용 임계값 5px)
+    if (
+      Math.abs(currentScrollY - lastScrollY) > 20 &&
+      $('.navbar-collapse').hasClass('in')
+    ) {
+      closeNavbar();
+    }
+
+    lastScrollY = currentScrollY;
+  });
+</script>
+
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
-<nav class="navbar navbar-default navbar-fixed-top navbar-toggler-iconㄴ">
+<nav class="navbar navbar-default navbar-fixed-top navbar-toggler-icon ">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -46,12 +131,12 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#about">ABOUT ME...</a></li>
-                <li><a href="#lifefor">인생모토</a></li>
-                <li><a href="#goal">목표들</a></li>
-                <li><a href="#favorite">최애의 무언가(들)</a></li>
-                <li><a href="#watch">구경하세여</a></li>
-                <li><a href="contact">연락하세여</a></li>
+                <li class="active"><a href="#about">ABOUT ME...</a></li>
+                <li class="active"><a href="#lifefor">인생모토</a></li>
+                <li class="active"><a href="#goal">목표들</a></li>
+                <li class="active"><a href="#favorite">최애의 무언가(들)</a></li>
+                <li class="active"><a href="#watch">구경하세여</a></li>
+                <li class="active"><a href="#contact">연락하세여</a></li>
             </ul>
         </div>
     </div>
@@ -60,14 +145,12 @@
 <div class="jumbotron text-center">
     <h1>어서오세요 ヾ(≧▽≦*)o</h1>
     <p class="italic-text">PPAK's SSOXO days...</p>
-    <form>
-        <div class="input-group">
-            <input type="email" class="form-control" size="50" placeholder="오늘의 한마디" required>
-            <div class="input-group-btn">
-                <button type="button" class="btn btn-danger">SEND!</button>
-            </div>
-        </div>
-    </form>
+        <form id="msgForm"> 
+            <input id="content" type="text" placeholder="오늘의 한마디" color="Black" required>
+            <button type="submit" class="send-btn">SEND</button>
+        </form>
+<script src="js/script.js"></script>
+
 </div>
 
 <!-- Container (About me... Section) -->
@@ -306,7 +389,7 @@
                     <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
                 </div>
             </div>
-            <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+            <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="10"></textarea><br>
             <div class="row">
                 <div class="col-sm-12 form-group">
                     <button class="btn btn-default pull-right" type="submit">Send</button>
@@ -322,8 +405,6 @@
     </a>
     <p>오늘도 행복하길...<a href="https://www.youtube.com/watch?v=pcxJMIVfyEg&list=RDpcxJMIVfyEg&start_radio=1" title="낙화">그런 의미에서 노래한곡조...</a></p>
 </footer>
-
-
 
 </body>
 </html>

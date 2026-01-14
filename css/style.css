@@ -9,6 +9,33 @@
 .currentcolor{
     color: #007087;
 }
+.send-btn {
+  background-color: #d1422f;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+input:focus {
+  border: 3px solid #222;
+  box-shadow: none;
+}
+input, textarea {
+  color: #000;
+  background-color: #fff;
+}
+#content,
+input,
+.form-control {
+  border: 2px solid #818181;   /* 회색 테두리 */
+  box-shadow: none;         /* 겹쳐 보이는 선 제거 */
+  outline: none;
+}
+.form-control:focus {
+  box-shadow: none;
+}
 
 body {
     font: 400 15px Lato, sans-serif;
@@ -32,7 +59,7 @@ h4 {
 .jumbotron {
     background-color: #007087;
     color: #ffd452;
-    padding: 100px 25px;
+    padding: 100px 100px;
     font-family: "Black Han Sans", sans-serif;
 }
 .container-fluid {
@@ -73,7 +100,7 @@ h4 {
     border-color: #007087;
 }
 .carousel-indicators li.active {
-    background-color: #007087;
+    background-color: #ffd452;
 }
 .item h4 {
     font-size: 19px;
@@ -136,16 +163,23 @@ h4 {
 }
 .navbar li a, .navbar .navbar-brand {
     color: #ffd452 !important;
+    background-color: transparent !important;
 }
-.navbar-nav li a:hover, .navbar-nav li.active a {
+.navbar-nav li a:hover {
+    color: #007087 !important;
+    background-color: #ffd452 !important;
+    transform: translateY(-1px);
+}
+.navbar-nav li.active a {
     color: #007087 !important;
     background-color: #ffd452 !important;
 }
+
 .navbar-default .navbar-toggle .icon-bar{
     background-color: #ffd452 !important; /* 햄버거 3줄 색 */
 }
 .navbar-default .navbar-toggle{
-    background-color: transparent;
+    background-color: transparent ;
     border: none;              /* 🔥 테두리 제거 */
     box-shadow: none;
 
@@ -158,8 +192,27 @@ h4 {
 }
 .navbar-default .navbar-toggle:hover .icon-bar,
 .navbar-default .navbar-toggle:focus .icon-bar{
-    background-color: #007087 !important; /* 호버 시 줄 색 반전 */
+    background-color: #ffd452 !important; /* 호버 시 줄 색 반전 */
 }
+.navbar-default .navbar-toggle {
+    background-color: transparent !important;
+}
+
+
+html {
+    scroll-behavior:auto;
+}
+
+.navbar {
+    transition: top 0.25s linear, background-color 0.25s linear;
+}
+
+.navbar-nav li a, .navbar-nav li.hovered a {
+    transition:
+        background-color 0.15s steps(1,end),
+        color 0.15s steps(1,end);
+}
+
 
 footer .glyphicon {
     font-size: 20px;
@@ -201,7 +254,7 @@ footer .glyphicon {
     }
     .btn-lg {
         width: 100%;
-        margin-bottom: 35px;
+        margin-bottom: 35px
     }
 }
 @media screen and (max-width: 480px) {
