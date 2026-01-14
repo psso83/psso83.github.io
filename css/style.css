@@ -10,12 +10,9 @@
     color: #007087;
 }
 .send-btn {
-  background-color: #d1422f;
-  color: white;
+  background-color: #d1422f !important;
+  color: white !important;
   border: none;
-  padding: 10px 16px;
-  border-radius: 6px;
-  cursor: pointer;
 }
 
 input:focus {
@@ -23,9 +20,15 @@ input:focus {
   box-shadow: none;
 }
 input, textarea {
-  color: #000;
-  background-color: #fff;
+  color: #000 !important;
+  background-color: #fff !important;
 }
+input:focus,
+textarea:focus {
+  color: #000 !important;
+  background-color: #fff !important;
+}
+
 #content,
 input,
 .form-control {
